@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+        }
+        body{
+            width:100vw;
+            height: 100vh;
+        }
+        header{
+            width:100%;
+            height:56vh;
+            background-color: rgb(144, 255, 144);
+        }
+
+        #logo{
+            width:100px;
+        }
+        #footerimg{
+            width:100px;
+        }
+        #login{
+            float: right;
+            display: flex;
+        }
+        #menu{
+            display: flex;
+
+    
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header> 
+            <nav>
+                <ul id="login">
+                    <li>회원가입</li>
+                    <li>로그인</li>
+                </ul>
+                <ul id="menu">
+                    <li><img id="logo" src="../logo/다운로드.png"></li>
+                    <li>리콜정보</li>
+                    <li>화장품심사정보</li>
+                    <li>커뮤니티</li>
+                    <li>마이페이지</li>
+                </ul>
+            </nav>
+            <div id="search">
+                <ul>
+                    <li><input type="text" name="search" placeholder="어떤 정보를 찾으시나요?"></li>
+                    <li>돋보기</li>
+                    <li>리콜정보 랜덤</li>
+                </ul>
+            </div>
+        </header>
+        <section>
+            <article id="recall">
+                <h1>리콜 제품 리스트</h1>
+            </article>
+            <article></article>
+            <article></article>
+        </section>
+        <footer>
+            <div><img  id="footerimg" src="../logo/img.jpg"></div>
+            <address>주소는주소다 주소는 주소야</address>
+        </footer>
+
+    </div>
+</body>
+</html>
