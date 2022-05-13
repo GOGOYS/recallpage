@@ -5,147 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        text-decoration: none;
-      }
-      body {
-        width: 100vw;
-        height: 100vh;
-      }
-
-      #wrap {
-        width: 100vw;
-        height: 10vh;
-        background-color: rgb(34, 34, 34);
-       
-      }
-      header, section {
-        width: 1280px;
-        margin: 0 auto;
-      }
-    
-
-      #loginwrap {
-        padding: 20px 10px 15px 10px;
-      }
-      #login {
-        float: right;
-        display: flex;
-      }
-      #login li a {
-        color: #fff;
-        font-size: 14px;
-      }
-      #login li:first-child {
-        padding-right: 20px;
-      }
-
-      #menu {
-        display: flex;
-        padding-top: 10px;
-        text-align: center;
-      }
-      #menu li:not(:first-child) {
-        padding-left: 100px;
-      }
-      #menu li:first-child {
-        padding-right: 100px;
-      }
-      #menu li a {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 400;
-      }
-
-      #menu a:after{
-        display: block;
-        width: 100px;
-        content: "";
-        border-bottom: solid 4px #fff;
-        transform: scaleX(0);
-        transition: transform 250ms ease-in-out;
-        padding-bottom: 5px;
-      }
-
-      #menu a:hover {
-        font-weight: 900;
-      }
-      #menu a:hover:after {
-        transform: scaleX(1);
-      }
-      #logo {
-        width: 160px;
-      }
-      #footerimg {
-        width: 100px;
-      }
-
-    
-      footer {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        background-color: #ddd;
-        width: 100vw;
-       
-        font-size: 12px;
-        line-height: 60px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      footer address{
-        width: 1280px;
-        margin: 0 auto;
-      }
-
-      footer address a {
-        color: black;
-      }
-    </style>
+    <link rel="stylesheet" href="../css/nav.css" />
   </head>
   <body>
     <div id="wrap">
-      <div id="background">
-        <header>
-          <nav>
-            <div id="loginwrap">
-              <ul id="login">
-                <li><a href="#">회원가입</a></li>
-                <li><a href="#">로그인</a></li>
-              </ul>
-            </div>
-            <ul id="menu">
-              <li>
-                <a href="#"
-                  ><img id="logo" name="home" src="../img/Innisfree-logo.svg.png"
-                /></a>
-              </li>
-              <li><a href="#">리콜정보</a></li>
-              <li><a href="#">심사정보</a></li>
-              <li><a href="#">커뮤니티</a></li>
-              <li><a href="#">마이페이지</a></li>
+      <header>
+        <nav>
+          <div id="loginwrap">
+            <ul id="login">
+              <li><a href="#">회원가입</a></li>
+              <li><a href="#">로그인</a></li>
             </ul>
-          </nav>
-
-        </header>
-        <section>
-
-        </section>
-    
-
-        
-      </div>
-        <footer>
-          <address>
-            문의사항은 깃허브로
-            <a href="https://github.com/GOGOYS/recallpage"
-              >https://github.com/GOGOYS/recallpage</a
-            >
-          </address>
-        </footer>
+          </div>
+          <ul id="menu">
+            <li>
+              <a href="#"
+                ><img id="logo" name="home" src="../img/Innisfree-logo.svg.png"
+              /></a>
+            </li>
+            <li><a href="#">리콜정보</a></li>
+            <li><a href="#">심사정보</a></li>
+            <li><a href="#">커뮤니티</a></li>
+            <li><a href="#">마이페이지</a></li>
+          </ul>
+        </nav>
+      </header>
+      <section></section>
+      <footer>
+        <address>
+          문의사항은 깃허브로
+          <a href="https://github.com/GOGOYS/recallpage"
+            >https://github.com/GOGOYS/recallpage</a
+          >
+        </address>
+      </footer>
+    </div>
   </body>
 </html>
