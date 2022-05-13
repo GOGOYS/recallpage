@@ -20,25 +20,25 @@
       #wrap {
         width: 100vw;
         height: 10vh;
-        background-color: rgb(144, 255, 144);
-        float: left;
+        background-color: rgb(34, 34, 34);
+       
       }
-      #background {
+      header, section {
         width: 1280px;
         margin: 0 auto;
       }
     
 
       #loginwrap {
-        padding: 20px 10px 20px 10px;
+        padding: 20px 10px 15px 10px;
       }
       #login {
         float: right;
         display: flex;
       }
       #login li a {
-        color: black;
-        font-size: 16px;
+        color: #fff;
+        font-size: 14px;
       }
       #login li:first-child {
         padding-right: 20px;
@@ -47,6 +47,7 @@
       #menu {
         display: flex;
         padding-top: 10px;
+        text-align: center;
       }
       #menu li:not(:first-child) {
         padding-left: 100px;
@@ -55,13 +56,26 @@
         padding-right: 100px;
       }
       #menu li a {
-        color: black;
+        color: #fff;
         font-size: 20px;
         font-weight: 400;
       }
 
-      #menu li a:hover {
+      #menu a:after{
+        display: block;
+        width: 100px;
+        content: "";
+        border-bottom: solid 4px #fff;
+        transform: scaleX(0);
+        transition: transform 250ms ease-in-out;
+        padding-bottom: 5px;
+      }
+
+      #menu a:hover {
         font-weight: 900;
+      }
+      #menu a:hover:after {
+        transform: scaleX(1);
       }
       #logo {
         width: 160px;
@@ -69,19 +83,23 @@
       #footerimg {
         width: 100px;
       }
-      section {
-        height: 84vh;
-      }
-      #footerback {
-        height: 6vh;
-        background-color: gray;
-      }
+
+    
       footer {
-        width: 1280px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: #ddd;
+        width: 100vw;
+       
         font-size: 12px;
         line-height: 60px;
         margin: 0 auto;
         text-align: center;
+      }
+      footer address{
+        width: 1280px;
+        margin: 0 auto;
       }
 
       footer address a {
@@ -103,11 +121,11 @@
             <ul id="menu">
               <li>
                 <a href="#"
-                  ><img id="logo" src="../img/Innisfree-logo.svg.png"
+                  ><img id="logo" name="home" src="../img/Innisfree-logo.svg.png"
                 /></a>
               </li>
               <li><a href="#">리콜정보</a></li>
-              <li><a href="#">화장품심사정보</a></li>
+              <li><a href="#">심사정보</a></li>
               <li><a href="#">커뮤니티</a></li>
               <li><a href="#">마이페이지</a></li>
             </ul>
@@ -118,7 +136,9 @@
 
         </section>
     
-      <div id="footerback">
+
+        
+      </div>
         <footer>
           <address>
             문의사항은 깃허브로
@@ -127,7 +147,5 @@
             >
           </address>
         </footer>
-      </div>
-    </div>
   </body>
 </html>
