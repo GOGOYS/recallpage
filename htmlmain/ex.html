@@ -5,8 +5,70 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../css/nav.css" />
     <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      #wrap {
+        width: 100vw;
+        height: 50vh;
+        background-color: rgb(144, 255, 144);
+        float: left;
+      }
+      header,
+      section {
+        width: 1280px;
+        margin: 0 auto;
+      }
+      header {
+        height: 50vh;
+      }
+
+      #loginwrap {
+        padding: 20px 10px 20px 10px;
+      }
+      #login {
+        float: right;
+        display: flex;
+      }
+      #login li a {
+        color: black;
+        font-size: 16px;
+      }
+      #login li:first-child {
+        padding-right: 20px;
+      }
+
+      #menu {
+        display: flex;
+        padding-top: 10px;
+      }
+      #menu li:not(:first-child) {
+        padding-left: 100px;
+      }
+      #menu li:first-child {
+        padding-right: 100px;
+      }
+      #menu li a {
+        color: black;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      #menu li a:hover {
+        font-weight: 900;
+      }
+      #logo {
+        width: 160px;
+      }
       #search {
         width: 1020px;
         margin: 100px auto 0;
@@ -39,6 +101,30 @@
         text-align: center;
         line-height: 40px;
       }
+
+      #footerimg {
+        width: 100px;
+      }
+
+      footer {
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: gray;
+        font-size: 12px;
+        line-height: 60px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      footer address {
+        width: 1280px;
+        margin: 0 auto;
+      }
+      footer address a {
+        color: black;
+      }
     </style>
   </head>
   <body>
@@ -54,11 +140,11 @@
           <ul id="menu">
             <li>
               <a href="#"
-                ><img id="logo" name="home" src="../img/Innisfree-logo.svg.png"
+                ><img id="logo" src="../img/Innisfree-logo.svg.png"
               /></a>
             </li>
             <li><a href="#">리콜정보</a></li>
-            <li><a href="#">심사정보</a></li>
+            <li><a href="#">화장품심사정보</a></li>
             <li><a href="#">커뮤니티</a></li>
             <li><a href="#">마이페이지</a></li>
           </ul>
@@ -77,6 +163,7 @@
           </ul>
         </div>
       </header>
+
       <section>
         <article id="recall">
           <h1>리콜 제품 리스트</h1>
@@ -84,14 +171,14 @@
         <article></article>
         <article></article>
       </section>
-      <footer>
-        <address>
-          문의사항은 깃허브로
-          <a href="https://github.com/GOGOYS/recallpage"
-            >https://github.com/GOGOYS/recallpage</a
-          >
-        </address>
-      </footer>
     </div>
+    <footer>
+      <address>
+        문의사항은 깃허브로
+        <a href="https://github.com/GOGOYS/recallpage"
+          >https://github.com/GOGOYS/recallpage</a
+        >
+      </address>
+    </footer>
   </body>
 </html>
