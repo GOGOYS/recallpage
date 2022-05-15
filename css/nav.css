@@ -9,19 +9,22 @@ body {
   height: 100vh;
 }
 
-#wrap {
-  width: 100vw;
-  height: 10vh;
-  background-color: rgb(34, 34, 34);
-}
 header,
 section {
   width: 1280px;
   margin: 0 auto;
 }
+#headerback{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100vw;
+  height: 80px;
+  background-color: rgb(34, 34, 34);
+}
 
 #loginwrap {
-  padding: 20px 10px 15px 10px;
+  padding: 15px 10px 10px 10px;
 }
 #login {
   float: right;
@@ -54,7 +57,7 @@ section {
 
 #menu a:after {
   display: block;
-  width: 100px;
+  width: 100%;
   content: "";
   border-bottom: solid 4px #fff;
   transform: scaleX(0);
@@ -71,9 +74,12 @@ section {
 #logo {
   width: 160px;
 }
+section{
+  height: 2000px;
+}
 
 footer {
-  position: absolute;
+  position: relative;
   left: 0;
   bottom: 0;
   background-color: #ddd;
