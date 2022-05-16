@@ -6,17 +6,15 @@
 }
 body {
   width: 100vw;
-  height: 100vh;
 }
 
-header,
-section {
+nav {
   width: 1280px;
   margin: 0 auto;
 }
-#headerback{
+#wrap {
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   width: 100vw;
   height: 80px;
@@ -74,9 +72,6 @@ section {
 #logo {
   width: 160px;
 }
-section{
-  height: 2000px;
-}
 
 footer {
   position: relative;
@@ -97,4 +92,9 @@ footer address {
 
 footer address a {
   color: black;
+}
+
+.fa-bell {
+  color: white;
+  margin-left: 20px;
 }
