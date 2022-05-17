@@ -6,13 +6,16 @@
 }
 body {
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
-
-nav {
+header nav {
   width: 1280px;
+  height: inherit;
   margin: 0 auto;
 }
-#wrap {
+header {
   position: fixed;
   top: 0;
   left: 0;
@@ -22,11 +25,11 @@ nav {
 }
 
 #loginwrap {
-  padding: 15px 10px 10px 10px;
+  padding-top: 10px;
 }
 #login {
-  float: right;
   display: flex;
+  justify-content: flex-end;
 }
 #login li a {
   color: #fff;
@@ -35,10 +38,12 @@ nav {
 #login li:first-child {
   padding-right: 20px;
 }
+#login li:last-child {
+  padding-right: none;
+}
 
 #menu {
   display: flex;
-  padding-top: 10px;
   text-align: center;
 }
 #menu li:not(:first-child) {
@@ -72,6 +77,9 @@ nav {
 #logo {
   width: 160px;
 }
+section {
+  flex: 1;
+}
 
 footer {
   position: relative;
@@ -81,7 +89,7 @@ footer {
   width: 100vw;
 
   font-size: 12px;
-  line-height: 60px;
+  line-height: 50px;
   margin: 0 auto;
   text-align: center;
 }
