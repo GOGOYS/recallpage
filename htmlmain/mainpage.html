@@ -174,8 +174,32 @@
 
       #recall-box-wrap {
         width: 250px;
-        height: 40;
+        height: 40px;
         overflow: hidden;
+        position: relative;
+      }
+
+      #recall-box{
+        width: 250px;
+        height: 200px;
+        position: absolute;
+      }
+
+      #recall-box-wrap #recall-box{
+        animation: run 20s steps(4, start) 2s infinite;
+        animation-timing-function:ease-in-out;
+       
+      }	
+      #recall-box-wrap:hover{
+        animation-play-state: paused;
+      }
+
+      @keyframes run{
+        from {top:0px}
+        25%{top:-40px}
+        50%{top:-80px}
+        75%{top:-120px}
+        to{top:-160px}
       }
     </style>
   </head>
@@ -241,11 +265,11 @@
           </li>
           <li id="recall-box-wrap">
             <div id="recall-box">
-              <div>1. 이니스프리 리콜</div>
-              <div>2. SK-II 리콜</div>
-              <div>3. 헤라 리콜</div>
-              <div>4. 올리브영 리콜</div>
-              <div>5. 아무거나 리콜</div>
+              <div class="slide">1. 이니스프리 리콜</div>
+              <div class="slide">2. SK-II 리콜</div>
+              <div class="slide">3. 헤라 리콜</div>
+              <div class="slide">4. 올리브영 리콜</div>
+              <div class="slide">5. 아무거나 리콜</div>
             </div>
           </li>
         </ul>
