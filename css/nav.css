@@ -75,7 +75,8 @@ header {
   transform: scaleX(1);
 }
 #logo {
-  width: 160px;
+  padding-top: 5PX;
+  width: 130px;
 }
 section {
   flex: 1;

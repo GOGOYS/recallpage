@@ -180,6 +180,7 @@
         height: 40px;
         overflow: hidden;
         position: relative;
+        transform: translateY();
       }
 
       #recall-box {
@@ -192,25 +193,26 @@
         animation: run 20s steps(4, start) 2s infinite;
         animation-timing-function: ease-in-out;
       }
-      #recall-box-wrap:hover {
+      .slide:hover {
         animation-play-state: paused;
       }
 
       @keyframes run {
         from {
-          top: 0px;
+          transform: translateY(0);
         }
-        25% {
-          top: -40px;
+        25%{
+          transform: translateY(-40px);
         }
-        50% {
-          top: -80px;
+        50%{
+          transform: translateY(-80px);
         }
-        75% {
-          top: -120px;
+        75%{
+          transform: translateY(-120px);
         }
+       
         to {
-          top: -160px;
+          transform: translateY(-160px);
         }
       }
     </style>
@@ -275,6 +277,12 @@
           </li>
           <li id="recall-box-wrap">
             <div id="recall-box">
+              <a href="#"><div class="slide">1. 이니스프리 리콜</div></a>
+              <a href="#"><div class="slide">2. SK-II 리콜</div></a>
+              <a href="#"><div class="slide">3. 헤라 리콜</div></a>
+              <a href="#"><div class="slide">4. 올리브영 리콜</div></a>
+              <a href="#"><div class="slide">5. 아무거나 리콜</div></a>
+
               <a href="#"><div class="slide">1. 이니스프리 리콜</div></a>
               <a href="#"><div class="slide">2. SK-II 리콜</div></a>
               <a href="#"><div class="slide">3. 헤라 리콜</div></a>
