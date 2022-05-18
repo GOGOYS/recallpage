@@ -59,10 +59,13 @@
       #search ul li:nth-child(3) {
         width: 250px;
         height: 40px;
-        background-color: white;
+        background-color: rgb(34, 34, 34);
         border-radius: 5px;
-        text-align: center;
         line-height: 40px;
+        padding-left: 20px;
+      }
+      #recall-box a {
+        color: #fff;
       }
 
       #icon {
@@ -179,27 +182,36 @@
         position: relative;
       }
 
-      #recall-box{
+      #recall-box {
         width: 250px;
         height: 200px;
         position: absolute;
       }
 
-      #recall-box-wrap #recall-box{
+      #recall-box-wrap #recall-box {
         animation: run 20s steps(4, start) 2s infinite;
-        animation-timing-function:ease-in-out;
-       
-      }	
-      #recall-box-wrap:hover{
+        animation-timing-function: ease-in-out;
+      }
+      #recall-box-wrap:hover {
         animation-play-state: paused;
       }
 
-      @keyframes run{
-        from {top:0px}
-        25%{top:-40px}
-        50%{top:-80px}
-        75%{top:-120px}
-        to{top:-160px}
+      @keyframes run {
+        from {
+          top: 0px;
+        }
+        25% {
+          top: -40px;
+        }
+        50% {
+          top: -80px;
+        }
+        75% {
+          top: -120px;
+        }
+        to {
+          top: -160px;
+        }
       }
     </style>
   </head>
@@ -236,9 +248,7 @@
         </div>
         <ul id="menu">
           <li>
-            <a href="#"
-              ><img id="logo" name="home" src="../img/logo.png"
-            /></a>
+            <a href="#"><img id="logo" name="home" src="../img/logo.png" /></a>
           </li>
 
           <li><a href="#">리콜정보</a></li>
@@ -265,11 +275,11 @@
           </li>
           <li id="recall-box-wrap">
             <div id="recall-box">
-              <div class="slide">1. 이니스프리 리콜</div>
-              <div class="slide">2. SK-II 리콜</div>
-              <div class="slide">3. 헤라 리콜</div>
-              <div class="slide">4. 올리브영 리콜</div>
-              <div class="slide">5. 아무거나 리콜</div>
+              <a href="#"><div class="slide">1. 이니스프리 리콜</div></a>
+              <a href="#"><div class="slide">2. SK-II 리콜</div></a>
+              <a href="#"><div class="slide">3. 헤라 리콜</div></a>
+              <a href="#"><div class="slide">4. 올리브영 리콜</div></a>
+              <a href="#"><div class="slide">5. 아무거나 리콜</div></a>
             </div>
           </li>
         </ul>
