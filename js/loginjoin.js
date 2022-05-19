@@ -18,3 +18,29 @@ $().ready(function () {
     });
   });
 });
+//아이디중복확인
+$().ready(function () {
+  $("#checkalertStart").click(function () {
+    Swal.fire({
+      icon: "error",
+      title: "이미 사용중인 아이디 입니다",
+      text: "다른 아이디를 입력해주세요",
+    });
+  });
+});
+//이름중복확인
+$().ready(function () {
+  $("#checknickalertStart").click(function () {
+    Swal.fire({
+      icon: "error",
+      title: "이미 사용중인 닉네임 입니다",
+      text: "다른 닉네임을 입력해주세요",
+    });
+  });
+});
+//리스트검색창결과없음
+$().ready(function () {
+  $("#searchalertStart").click(function () {
+    Swal.fire("검색 결과 없음", "다른 검색어를 입력하세요", "question");
+  });
+});
