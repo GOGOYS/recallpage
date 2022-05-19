@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자유게시판</title>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+  />
+  <script
+  scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+></script>
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+     
+      #topsection {
+        justify-content: center;
+        justify-items: center;
+        width: 80%;
+        height: 1%;
+        display: flex;
+        flex-direction: column;
+        margin: 0px auto;
+        margin-top: 50px;
+        line-height: 35px;
+        padding-left: 0px;
+      }
+      #bh2 li {
+        border-bottom: 1px solid rgb(88, 85, 79);
+      }
+      table {
+        margin: 60px auto;
+        text-align: center;
+        width: 80%;
+        border-collapse: collapse;
+        font-size: 15px;
+      }
+      #boardtable tr {
+        height: 32px;
+        border-bottom: 1px solid #aaa;
+      }
+      #boardtable tr:nth-child(odd) {
+        background-color: rgb(218, 213, 213);
+      }
+      #boardtable tr:nth-child(1) {
+        background-color: rgba(118, 201, 65, 0.1);
+        border-bottom: 1.2px solid #aaa;
+      }
+      #boardtable tr:not(:first-of-type):hover {
+        background-color: rgba(118, 201, 65, 0.1);
+      }
+     
+    
+      #page {
+        position: relative;
+        display: flex;
+        margin: 15px auto;
+        
+      }
+      #page ul {
+        display: inline-block;
+        padding: 1px;
+        margin: 5px auto;
+        
+      }
+      #page li {
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        display: inline-block;
+        padding: 0;
+        margin-left: 0 10px;
+        border: 1px solid #aaa;
+      }
+      #pagebutton {
+        display: inline-block;
+        position: absolute;
+        margin-right: 50px;
+        left : 1185px
+
+      }
+      #pagebutton button {
+        position: absolute;
+        border:1px solid rgb(88, 85, 79);
+        background-color: white;
+        width: 80px;
+        height: 40px;
+        border-radius: 15px;
+        color: rgb(88, 85, 79);
+        font-weight: 600;
+      }
+      #pagebutton button:hover {
+        cursor: pointer;
+        background-color: rgb(230, 227, 223);
+        box-shadow: -1px 3px rgb(126, 111, 126) ;
+      }
+      #freeboard {
+        flex: 1;
+        margin: 0;
+        margin-top: 50px;
+        position: relative;
+      }
+      #freeboard a {
+        color: black;
+      }
+      #freeboard a:hover {
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="loginwrap">
+          <ul id="login">
+            <li><a href="../htmlmain/join.html">회원가입</a></li>
+            <li><a href="../htmlmain/login.html">로그인</a></li>
+            <li>
+              <a href="#"
+                ><i onclick="ShowBell()" class="fa-solid fa-bell"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div id="bell-watch">
+          <div id="bell-see">
+            <a href="#"><i onclick="HideBell()" class="fa-solid fa-x"></i></a>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">어느 화장품이 리콜을 했을까요~</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+          </div>
+        </div>
+        <ul id="menu">
+          <li>
+            <a href="../htmlmain/mainpage.html"
+              ><img id="logo" src="../img/logo.png"
+            /></a>
+          </li>
+          <li><a href="../htmlmain/recall_list.html">리콜정보</a></li>
+          <li><a href="../htmlmain/info_list.html">화장품심사정보</a></li>
+          <li><a href="../htmlmain/board.html">커뮤니티</a></li>
+          <li><a href="../htmlmain/myprofile.html">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 정렬, 표시될게시글숫자 -->
+    <!-- 데이터활용 https://www.dploor.com/datalist/api 참고 -->
+    <!-- ppt https://post.naver.com/viewer/postView.naver?volumeNo=19836057&memberNo=6532296&navigationType=push -->
+    <!-- https://www.canva.com/ko_kr/presentations/templates/?category=tACFasDnyEQ -->
+   
+    <section id="freeboard">
+      <div id="topsection">
+        <div id="bh2">
+              <ul>
+                <li>
+                  <h2>커뮤니티 자유게시판</h2>
+              </li>
+            </ul>
+          </div>
+          <div id="bp">
+            <p>화장품에 대한 정보를 자유롭게!</p>
+          </div>
+        </div>
+        <table id="boardtable">
+          <colgroup>
+            <col width="15%" />
+            <col width="40%" />
+            <col width="15%" />
+            <col width="15%" />
+            <col width="15%" />
+          </colgroup>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>작성일</th>
+            <th>조회수</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+            <td>관리자</td>
+            <td>2022.05.10</td>
+            <td>1</td>
+          </tr>
+          <td>10</td>
+          <td><a href="board-in .html">커뮤니티 자유게시판</a></td>
+          <td>관리자</td>
+          <td>2022.05.10</td>
+          <td>1</td>
+        </tr>
+
+      </table>
+      <div id="page">
+        <ul>
+          <a href="#"><li><<</li></a>
+          <a href="#"><li><</li></a>
+          <a href="#"><li>1</li></a>
+          <a href="#"><li>2</li></a>
+          <a href="#"><li>3</li></a>
+          <a href="#"><li>4</li></a>
+          <a href="#"><li>5</li></a>
+          <a href="#"><li>6</li></a>
+          <a href="#"><li>7</li></a>
+          <a href="#"><li>8</li></a>
+          <a href="#"><li>9</li></a>
+          <a href="#"><li>10</li></a>
+          <a href="#"><li>></li></a>
+          <a href="#"><li>>></li></a>
+        </ul>
+        <div id="pagebutton">
+          <a href="board_wirte.html"><button>작성하기</button></a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <address>
+        문의사항은 깃허브로
+        <a href="https://github.com/GOGOYS/recallpage"
+          >https://github.com/GOGOYS/recallpage</a
+        >
+      </address>
+    </footer>
+    <script text="text/javascript" src="../js/nav.js"></script>
+  </body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>내 프로필</title>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    ></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+
+      section {
+        position: relative;
+        width: 1280px;
+        height: 90vh;
+        margin: 0 auto;
+        margin-top: 0px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+
+      #profile {
+        flex: 1;
+        flex-direction: column;
+        height: 80vh;
+        margin: 0 10px;
+      }
+      #mymenu {
+        flex: 3;
+        flex-direction: column;
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0px 20px;
+      }
+      #mymenu ul li {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        align-items: center;
+      }
+      #mymenu img {
+        width: 23px;
+        height: 23px;
+        margin: 0 7px;
+      }
+      #infor {
+        flex: 3;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        font-size: 18px;
+        margin: 0;
+        align-items: flex-start;
+      }
+      #infor ul li {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+      }
+      #infor ul {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-left: 20px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #b1b1b1;
+      }
+      #infor li {
+        border-bottom: 1px solid #b1b1b1;
+      }
+      #lastli {
+        border: none;
+      }
+      #infor img {
+        width: 23px;
+        height: 23px;
+        margin: 0 7px;
+      }
+      .empha {
+        background-color: antiquewhite;
+        color: white;
+        font-size: 22px;
+        background-image: linear-gradient(98deg, #76c941, #ffffff);
+        display: flex;
+        justify-content: space-between;
+      }
+      #myprofile,
+      #goods {
+        margin-left: 30px;
+        width: 70%;
+        justify-content: left;
+      }
+      #myprofile {
+        margin-top: 50px;
+        flex: 2;
+      }
+      #goods {
+        margin-top: 30px;
+        flex: 3;
+      }
+
+      section div {
+        display: flex;
+        justify-content: center;
+      }
+      #my {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 50px;
+      }
+      #myimg {
+        flex: 3;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      #myimg img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+      #id_nick {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        border: 1px solid rgb(189, 189, 189);
+        border-radius: 20px;
+      }
+      #nick {
+        display: flex;
+        flex: 1;
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 40px;
+      }
+      #email {
+        display: flex;
+        flex: 1;
+        font-size: 16px;
+        font-weight: 600;
+        color: rgb(119, 119, 119);
+      }
+      a {
+        color: black;
+      }
+      .black-bell {
+        color: black;
+      }
+      .icon {
+        margin: 5px 10px;
+        color: black;
+      }
+      .emphaicon {
+        margin-top: 5px;
+        color: black;
+        font-size: 25px;
+      }
+      .add {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 60%;
+        position: absolute;
+        align-items: center;
+        justify-content: flex-start;
+        border-radius: 5%;
+        background-color: #d7f9c1;
+        border: 1px solid #aaa;
+        margin-left: 130px;
+        opacity: 0;
+        transition: 0.8s;
+      } 
+      .add ul {
+        width: 80%;
+      }
+      #add_title {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 800;
+        margin-top: 40px;
+      }
+      #addbox {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 15px;
+        border: none;
+        border-radius: 5px;
+        background-color: #aaa;
+        overflow: hidden;
+      }
+      #addbox input {
+        width: 95%;
+        height: 30px;
+        border: none;
+      }
+      #addbox i {
+        width: 5%;
+        font-size: 25px;
+        margin-left: 4px;
+      }
+      #search_record {
+        width: 85%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-top: 5px;
+        justify-content: flex-start;
+        padding-left:25px ;
+      }
+      #search_record li{
+      margin-top: 5px;
+      padding: 3px;
+      border-bottom: 1px solid #ccc;
+      color: rgb(107, 107, 107);
+      }
+      #exit_add {
+        position: absolute;
+        margin-left: 580px;
+        margin-top: 10px;
+      }
+      #exit_add button {
+        margin-right: auto;
+        color: white;
+        border: none;
+        border-radius: 5%;
+        background-color: rgb(0, 0, 0);
+        height: 25px;
+        width: 25px;
+      
+      }
+
+
+
+
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="loginwrap">
+          <ul id="login">
+            <li><a href="../htmlmain/join.html">회원가입</a></li>
+            <li><a href="../htmlmain/login.html">로그인</a></li>
+            <li>
+              <a href="#"
+                ><i onclick="ShowBell()" class="fa-solid fa-bell"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div id="bell-watch">
+          <div id="bell-see">
+            <a href="#"><i onclick="HideBell()" class="fa-solid fa-x"></i></a>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">어느 화장품이 리콜을 했을까요~</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+          </div>
+        </div>
+        <ul id="menu">
+          <li>
+            <a href="../htmlmain/mainpage.html"><img id="logo" src="../img/logo.png" /></a>
+          </li>
+          <li><a href="../htmlmain/recall_list.html">리콜정보</a></li>
+          <li><a href="../htmlmain/info_list.html">화장품심사정보</a></li>
+          <li><a href="../htmlmain/board.html">커뮤니티</a></li>
+          <li><a href="../htmlmain/myprofile.html">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 정렬, 표시될게시글숫자 -->
+    <!-- 데이터활용 https://www.dploor.com/datalist/api 참고 -->
+    <!-- ppt https://post.naver.com/viewer/postView.naver?volumeNo=19836057&memberNo=6532296&navigationType=push -->
+    <!-- https://www.canva.com/ko_kr/presentations/templates/?category=tACFasDnyEQ -->
+    <section>
+      <div id="profile">
+        <div id="my">
+          <div id="myimg">
+            <img src="../image\hodu.jpg" />
+          </div>
+          <div id="id_nick">
+            <div id="nick">
+              <p><a href="#">호두</a></p>
+            </div>
+            <div id="email">
+              <p><a href="#">hodu@gmail.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div id="mymenu">
+          <ul>
+            <a href="#"
+              ><li>
+                <i class="fa-regular fa-bell black-bell icon"></i>알림
+              </li></a
+            >
+            <a href="#"
+              ><li><img src="..\image\makeup.png" />내가 쓰는 제품</li></a
+            >
+            <a href="#"
+              ><li><img src="..\image\cosmetics.png" />관심 상품</li></a
+            >
+          </ul>
+        </div>
+      </div>
+
+      <div id="infor">
+        <div id="myprofile">
+          <ul>
+            <a href="#"><li class="empha">내 프로필</li></a>
+            <a href="#"
+              ><li><i class="fa-regular fa-user icon"></i>호두</li></a
+            >
+            <a href="#"
+              ><li>
+                <i class="fa-solid fa-mobile-screen-button icon"></i
+                >010-1234-1234
+              </li></a
+            >
+            <a href="#"
+              ><li>
+                <i class="fa-regular fa-envelope icon"></i>hodu@gmail.com
+              </li></a
+            >
+            <a href="#"
+              ><li>
+                <i class="fa-solid fa-shield-halved icon"></i>비밀번호
+              </li></a
+            >
+          </ul>
+        </div>
+        <div id="goods">
+          <ul>
+            <li class="empha">
+              <p>내가 쓰는 화장품</p>
+              <a href="#" class="oBtn"><i class="fa-solid fa-plus-minus emphaicon"></i></a>
+            </li>
+            <li><a href="#">1234</a></li>
+            <li>2345</li>
+            <li>3465</li>
+            <li>4567</li>
+            <li>7897</li>
+          </ul>
+        </div>
+      </div>
+       <!-- 내가 쓰고있는 화장품 등록 창 clascc "add" -->
+      <div class="add">
+        <ul>
+          <li id="add_title">내가 쓰고있는 화장품 추가하기</li>
+          <li>
+            <div id="addbox">
+              <input type="text" placeholder="화장품 이름을 입력해주세요" /><i
+                class="fa-solid fa-magnifying-glass"
+              ></i>
+            </div>
+            </ul>
+            <div id="search_record">
+              <ul>
+                <li><p>숨37 워터풀 타임리프 워터 젤 크림</p>                </li>
+                <li><p>더페이스샵 더테라피 에센셜 토닉 트리트먼트</p></li>
+                <li><p>더페이스샵 치아씨드 수분 지킴 에센스 150ml</p>                </li>
+                <li><p>오휘 미라클 모이스처 에센스 50ml</p></li>
+                <li><p>숨37 워터풀 타임리프 워터 젤 크림</p>                </li>
+                <li><p> 에센셜 토닉 트리트먼트</p></li>
+                <li><p> 타임리프 워터 젤 크림</p>                </li>
+                <li><p> 에센셜 토닉 </p></li>
+              </ul>
+            </div>
+            <div id="exit_add"><button class="cBtn" type="text">X</button></div>
+          </li>
+      </div>
+    </section>
+    <footer>
+      <address>
+        문의사항은 깃허브로
+        <a href="https://github.com/GOGOYS/recallpage"
+          >https://github.com/GOGOYS/recallpage</a
+        >
+      </address>
+    </footer>
+    <script text="text/javascript" src="../js/nav.js"></script>
+  </body>
+</html>

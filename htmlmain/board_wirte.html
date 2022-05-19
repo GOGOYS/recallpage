@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자유게시판 글쓰기</title>
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+    ></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+      }
+      section {
+        width: 100%;
+        height: 84vh;
+        margin: 0px;
+        margin-top: 70px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      section div {
+        display: flex;
+        width: 1200px;
+        justify-content: center;
+        border: 2px solid #aaa;
+        border-radius: 10px;
+      }
+      section input {
+        outline: none;
+        border: none;
+        height: 95%;
+        width: 95%;
+        text-align: center;
+        vertical-align: text-top;
+        font-size: 18px;
+      }
+      #title {
+        flex: 2;
+        margin: 0px auto;
+        width: 1200px;
+      }
+      #content {
+        margin: 20px auto;
+        flex: 15;
+      }
+      #btn {
+        flex: 1;
+        align-content: center;
+        align-items: center;
+        justify-items: right;
+        justify-content: right;
+        border: none;
+      }
+      #btn button {
+        font-size: 15px;
+        width: 100px;
+        height: 40px;
+        background-color: whitesmoke;
+        border: 1px solid whitesmoke;
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      #btn button:hover {
+        background-color: rgb(235, 235, 235);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div id="loginwrap">
+          <ul id="login">
+            <li><a href="../htmlmain/join.html">회원가입</a></li>
+            <li><a href="../htmlmain/login.html">로그인</a></li>
+            <li>
+              <a href="#"
+                ><i onclick="ShowBell()" class="fa-solid fa-bell"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div id="bell-watch">
+          <div id="bell-see">
+            <a href="#"><i onclick="HideBell()" class="fa-solid fa-x"></i></a>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">어느 화장품이 리콜을 했을까요~</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+            <div class="bell-box">
+              <a href="#">이것은 리콜정보에 대한 알림</a>
+            </div>
+          </div>
+        </div>
+        <ul id="menu">
+          <li>
+            <a href="../htmlmain/mainpage.html"><img id="logo" src="../img/logo.png" /></a>
+          </li>
+          <li><a href="../htmlmain/recall_list.html">리콜정보</a></li>
+          <li><a href="../htmlmain/recall_list.html">화장품심사정보</a></li>
+          <li><a href="../htmlmain/board.html">커뮤니티</a></li>
+          <li><a href="../htmlmain/myprofile.html">마이페이지</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- 정렬, 표시될게시글숫자 -->
+    <!-- 데이터활용 https://www.dploor.com/datalist/api 참고 -->
+    <!-- ppt https://post.naver.com/viewer/postView.naver?volumeNo=19836057&memberNo=6532296&navigationType=push -->
+    <!-- https://www.canva.com/ko_kr/presentations/templates/?category=tACFasDnyEQ -->
+
+    <section>
+      <div id="title">
+        <input type="text" placeholder="제목을 입력해주세요" />
+      </div>
+      <div id="content">
+        <input type="text" placeholder="내용을 입력해주세요" />
+      </div>
+      <div id="btn">
+        <button type="button">게시글 등록</button>
+      </div>
+    </section>
+    <footer>
+      <address>
+        문의사항은 깃허브로
+        <a href="https://github.com/GOGOYS/recallpage"
+          >https://github.com/GOGOYS/recallpage</a
+        >
+      </address>
+    </footer>
+    <script text="text/javascript" src="../js/nav.js"></script>
+  </body>
+</html>

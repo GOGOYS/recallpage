@@ -6,11 +6,11 @@ header {
   background-size: cover;
   background-attachment: fixed;
   width: 100vw;
-  height: 560px;
+  height: 55vh;
 }
 #search {
   position: relative;
-  top: 260px;
+  top: 45%;
 
   width: 1020px;
   margin: 0 auto;

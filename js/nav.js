@@ -7,3 +7,4 @@ function ShowBell() {
 function HideBell() {
   $("#bell-watch").css({ display: "none" });
 }
+
