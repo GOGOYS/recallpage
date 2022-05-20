@@ -1,15 +1,13 @@
-const open = document.querySelectorAll("a.oBtn");
+document.addEventListener("DOMContentLoaded", () => {
+  const open = document.querySelector("button.oBtn");
 
-open.addEventListener("click", () => {
- 
- 
-  document.querySelector("div.add").style.opacity = 1;
-  
-});
+  open.addEventListener("click", () => {
+    document.querySelector("div.add").style.opacity = 1;
+  });
 
-const close = document.querySelectorAll("button.cBtn");
+  const close = document.querySelector("button.cBtn");
 
-close.addEventListener("click", () => {
-  
+  close.addEventListener("click", () => {
     document.querySelector("div.add").style.opacity = 0;
+  });
 });

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>화장품 제조(판매)업 정보조회</title>
+    <title>SAVE SKINㅣ화장품 제조(판매)업 정보조회</title>
+    <link rel="icon" href="../img/favicon.ico">
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/list.css" />
     <style></style>
@@ -16,6 +17,8 @@
     scr="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
   ></script>
   <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="../js/sw.js"></script>
   </head>
   <body>
     <header>
@@ -78,7 +81,7 @@
         <article class="search">
           <div>
             <input type="search" placeholder="어떤 정보를 찾으시나요?" />
-            <button type="submit">
+            <button type="submit" id="searchalertStart">
               <i
                 class="fa-solid fa-magnifying-glass fa-2x"
                 style="color: white"
@@ -205,5 +208,7 @@
       </address>
     </footer>
     <script text="text/javascript" src="../js/nav.js"></script>
+    
+    <script text="text/javascript" src="../js/loginjoin.js"></script>
   </body>
 </html>

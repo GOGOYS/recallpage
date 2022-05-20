@@ -29,7 +29,8 @@ header {
   text-align: left;
   padding-left: 15px;
 }
-#search ul li:nth-child(2) {
+
+#searchalertStart {
   width: 70px;
   height: 40px;
   background-color: rgb(118, 201, 65);
@@ -37,6 +38,7 @@ header {
   border-radius: 0 5px 5px 0;
   line-height: 40px;
   text-align: center;
+  border: none;
 }
 #search ul li:nth-child(3) {
   width: 250px;

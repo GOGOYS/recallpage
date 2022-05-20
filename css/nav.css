@@ -120,6 +120,10 @@ footer address a {
   background-color: #ddd;
 }
 
+#bell-see p {
+  color: #fff;
+  margin-left: 10px;
+}
 .bell-box {
   width: 90%;
   background-color: white;
